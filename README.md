@@ -33,6 +33,7 @@ Definitions:
 7. Device individual initial passwords shall be implemented.
 8. Session tokens shall be used with limited lifetime.
 9. Session tokens shall be invalidated as soon as a user logs off.
+10. The APIs of the gateway server shall be well documented.
 
 ## Gateway & Inverter
 
