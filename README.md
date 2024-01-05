@@ -60,43 +60,43 @@ Notes:
 ### Secure Debugging
 
 1. Any debugging interfaces (JTAG, UART...) shall be disabled.
-2. Re-enabling debugging interfaces shall only be implemented with signed tokens. This shall involve a device individual parameter with enough entropy, so that the tokens can't be used for all devices.
+2. Re-enabling debugging interfaces shall only be implemented with signed tokens. This token shall include a device individual parameter with enough entropy, so that secure debugging tokens can't be used for all devices.
 
 ### Safety Pure HW Protection Mechanisms
 
-In case of firmware compromisation, following pure HW circuits shall be implemented:
+In case of firmware compromisation, following pure hardware circuits shall be implemented:
 1. Short circuit protection at the solar **and** grid side
 2. Over-heating protection
 
 ## Cloud & APIs
 
-### Secure Communication
+### APIs Secure Communication
 
 1. APIs shall only be accessible via TLS >= 1.2.
 
-### Authentication & Session Tokens (owner's side)
+### Owner Side Authentication & Session Tokens
 
 1. User authentication on the cloud platform shall be based on Multi-Factor-Authentication.
 2. Password minimum entropy shall be enforced.
 3. Session tokens shall have enough entropy. Json Web Tokens may be used.
-4. Session tokens shall be invalidated after a predefined timeout.
+4. Session tokens shall be invalidated after a predefined time.
 5. Session tokens shall be invalidated as soon as a user logs off.
 
-### Authentication (device's side)
+### Device Side Authentication
 
 1. Device authentiation shall be based on mTLS (see section Gateway & Inverter > Secure Communication).
 
-### API Authorizations (owner's side)
+### Owner Side API Authorizations
 
 1. **ALL** APIs shall enforce authorization with a valid session token.
 2. It shall be ensured, that users can only access resources they are allowed to.
 > [!NOTE]
 > This requirement is not testable.
 
-### Cloud Authorizations (device side)
+### Device Side Cloud Authorizations
 
-1. It must be ensured that devices can only access resources for which they are allowed to.
-2. Access policies shall be implemented on the cloud side (e.g. MQTT Broker).
+1. It must be ensured that devices can only access resources which they are allowed to.
+2. Access policies shall be implemented on the cloud side (e.g. inside the MQTT Broker).
 
 ### Remote Control & Remote Maintenance Security
 
@@ -108,7 +108,7 @@ In case of firmware compromisation, following pure HW circuits shall be implemen
 1. It must not be possible to upload a Firmware Update Image on the update file server.
 2. A Firmware Update shall only be triggered by device owners or automatically. 
 
-### Security in case of Compromised Server
+### Security in case of Compromised Servers
 
 1. It shall be ensured that in case of cloud servers compromization, no scalable attacks on a device fleet is possible.
 > [!IMPORTANT]
@@ -119,7 +119,7 @@ In case of firmware compromisation, following pure HW circuits shall be implemen
 1. The pairing process (device + owner) shall involve high entropy credentials (NOT a simple serial number!).
 2. This pairing process shall only be possible in a local network (NOT remotely).
 > [!TIP]
-> To implement secure pairing, X.509 certificated can be used. A user-certificate can be used and securely (in local network) transfered to the device, which only accepts this certificate after the pairing process. End-to-end encryption between device and App can then be implemented using the user-certificate and the device certificate.
+> To implement secure pairing, X.509 certificated can be used. A user-certificate can be created and transfered securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App can then be implemented using the user-certificate and the device-certificate.
 4. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
 
    
