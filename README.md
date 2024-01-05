@@ -17,7 +17,7 @@ These requirements apply for solar power plants consisting of:
 Notes:
 * *must* or *shall* are used for mandatory positive requirements.
 * *must not* is used for mandatory negative requirements.
-* *may* is an optional requirement or an example of implementation
+* *may* is an optional requirement or an example of implementation.
 
 ## Gateway & Inverter
 
