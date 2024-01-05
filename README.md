@@ -7,6 +7,8 @@ A collection of cybersecurity requirements for connected grid tie solar inverter
 These requirements apply for solar power plants consisting of:
 * The solar inverter.
 * The gateway. This device is the bridge between the vendor's cloud and the inverter. It communicates with the cloud via an internet router. It may be integrated in the inverter.
+> [!IMPORTANT]
+>  In order to be able to integrate open source software solutions, the gateway shall implement a server providing the same services as from the vendor's cloud.
 * The cloud platform with two interfaces:
   + Device side accessible via specific protocols (e.g. MQTT).
   + Owner side  accessible via a web client or an app using APIs. *App security is out of scope*.
