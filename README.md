@@ -13,12 +13,22 @@ These requirements apply for solar power plants consisting of:
 > [!NOTE]
 >  Testing the cloud platform is only partly possible, so that not all requirements can be fully tested.
 
-![block](pictures/solar2.png)
+![block](pictures/solar.png)
 
 Definitions:
 *  *must* or *shall* are used for mandatory positive requirements.
 *  *must not* is used for mandatory negative requirements.
 *  *may* is an optional requirement or an example of implementation.
+
+## Integration of open source solutions
+
+1. In order to be able to integrate an open source software solution, the gateway shall implement a server accessible from the local network. 
+2. This server shall provide the same services as from the manufacturer's cloud.
+3. This server shall implement TLS version >= 1.2.
+4. Client authentication shall be done either via passwords with enough entropy or mTLS.
+5. Device individual initial passwords shall be implemented.
+6. Session tokens shall be used with limited lifetime.
+7. Session tokens shall be invalidated as soon as a user logs off.
 
 ## Gateway & Inverter
 
