@@ -13,7 +13,7 @@ Block diagram here.
 Notes:
 * *must* or *shall* are used for mandatory positiv requirements.
 * *must not* is used for mandatory negativ requirements.
-* *may* is a mandatory requirement or an example of implementation
+* *may* is an optional requirement or an example of implementation
 
 ## Gateway & Inverter
 
