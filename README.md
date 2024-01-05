@@ -10,9 +10,9 @@ These requirements apply for solar power plants consisting of:
   + At the device's side, it is accessible via specific protocols (e.g. MQTT).
   + At the owner's side, it is accessible via a web client or an app. App security is out of scope.
 > [!NOTE]
->  Testing the cloud plattform is only partly possible, so that not all requirements can be fully tested.
+>  Testing the cloud platform is only partly possible, so that not all requirements can be fully tested.
 
-![dsp](pictures/solar2.png)
+![block](pictures/solar2.png)
 
 Notes:
 * *must* or *shall* are used for mandatory positive requirements.
@@ -30,7 +30,7 @@ Notes:
 2. Individual client certificates shall be used on the gateway side.
 3. The gateway private key shall be protected (confidentiality) inside the device. This can be done either with a separate secure element or an internal secure enclave inside the processor system.
 4. The Root CA of the cloud platform used for server authentication shall be protected (integrity) inside the device. 
-5. If a WiFi access point is used for initial device parametrization, it shall implement WPA3 security with **individual** initial password protection.
+5. If a WiFi access point is used for device initialization, it shall implement WPA3 security with **individual** initial password protection.
 6. It shall be possible to switch off the Access Point. 
 7. If any other wireless communication is used (e.g. Bluetooth), state of the art security shall be implemented.
 8. The device must not implement proprietary wireless communication. 
@@ -55,7 +55,7 @@ Notes:
 1. CPU and DSP implemented in the devices shall implement secure boot.
 2. For devices with internal flash, a separate bootloader shall be used to implement secure boot.
 3. For devices without internal flash, CPU / DSP vendor's secure boot mechanisms shall be used.
-4. Secure boot shall be based on assymmetric cryptography. Integrity of the code shall be cheked **before** it runs on the CPUs/DSPs.
+4. Secure boot shall be based on asymmetric cryptography. Integrity of the code shall be checked **before** it runs on the CPUs/DSPs.
    
 ### Secure Debugging
 
@@ -64,7 +64,7 @@ Notes:
 
 ### Safety Pure Hardware Protection Mechanisms
 
-In case of firmware compromisation, following pure hardware circuits shall be implemented:
+In case of compromised firmware, following pure hardware circuits shall be implemented:
 1. Short circuit protection at the solar **and** grid side
 2. Over-heating protection
 
@@ -84,7 +84,7 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 
 ### Device Side Authentication
 
-1. Device authentiation shall be based on mTLS (see section Gateway & Inverter > Secure Communication).
+1. Device authentication shall be based on mTLS (see section Gateway & Inverter > Secure Communication).
 
 ### Owner Side API Authorizations
 
@@ -110,7 +110,7 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 
 ### Security in case of Compromised Servers
 
-1. It shall be ensured that in case of cloud servers compromization, no scalable attacks on a device fleet is possible.
+1. It shall be ensured that in case of compromised cloud servers, no scalable attacks on a device fleet is possible.
 > [!IMPORTANT]
 > This is an important requirement. 
 
@@ -119,7 +119,7 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 1. The pairing process (device + owner) shall involve high entropy credentials (**NOT** a simple serial number!).
 2. This pairing process shall only be possible in a local network (**NOT** remotely).
 > [!TIP]
-> To implement secure pairing, X.509 certificated may be used. A user-certificate may be created and transfered securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App may then be implemented using the user-certificate and the device-certificate.
+> To implement secure pairing, X.509 certificated may be used. A user-certificate may be created and transferred securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App may then be implemented using the user-certificate and the device-certificate.
 4. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
 
    
