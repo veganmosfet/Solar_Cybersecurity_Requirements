@@ -13,7 +13,7 @@ Block diagram here.
 Notes:
 * *must* or *shall* are used for mandatory positiv requirements.
 * *must not* is used for mandatory negativ requirements.
-
+* *may* is a mandatory requirement or an example of implementation
 
 ## Gateway & Inverter
 
@@ -54,26 +54,52 @@ Note: the word *device* is used here for gateway and/or inverter.
    
 ### Secure Debugging
 
-### Tampering Detection
+1. Any debugging interfaces (JTAG, UART...) shall be disabled.
+2. Re-enabling debugging interfaces shall only be implemented with signed tokens. This shall involve a device individual parameter with enough entropy, so that the tokens can't be used for all devices.
 
-### Pure HW Protection Mechanisms
+### Safety Pure HW Protection Mechanisms
 
+In case of firmware compromisation, following pure HW circuits shall be implemented:
+1. Short circuit protection at the solar **and** grid side
+2. Over-heating protection
 
-## Cloud
+## Cloud & APIs
 
 ### Secure Communication
 
+1. APIs shall only be accessible via TLS >= 1.2.
+
 ### Authentication & Session Tokens
+
+1. User authentication on the cloud platform shall be based on Multi-Factor-Authentication.
+2. Password minimum entropy shall be enforced.
+3. Session tokens shall have enough entropy. Json Web Tokens may be used.
+4. Session tokens shall be invalidated after a predefined timeout.
+5. Session tokens shall be invalidated as soon as a user logs off.
 
 ### API Authorizations
 
-### Remote Control & Remote Maintenance Security
-Physical User Interaction w/ the device
+1. **ALL** APIs shall enforce authorization with a valid session token.
+2. It shall be ensured, that users can only access resources they are allowed to. **Note**: this requirement is not testable.
 
+### Remote Control & Remote Maintenance Security
+
+1. Any remote control action of the device shall involve the device individual password (see section Gateway & Inverter > Authentication and Authorization).
+2. Any remote maintenance action shall involve a physical user interaction with the device (e.g. pressing a key).
+   
 ### OTA Firmware Update
+
+1. It must not be possible to upload a Firmware Update Image on the update file server.
+2. A Firmware Update shall only be triggered by device owners. (Not sure here).
 
 ### Security in case of Compromised Server
 
+1. It shall be ensured, that in case of cloud servers compromization, no scalable attacks on the device fleet is possible. (Not sure how but important). 
 
 ## Secure Pairing Process & Factory Reset
 
+1. The pairing process (device + owner) shall involve high entropy credentials (NOT a simple serial number!).
+2. This pairing process shall only be possible in a local network (NOT remotely).
+3. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
+
+   
