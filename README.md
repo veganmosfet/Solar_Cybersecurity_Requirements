@@ -1,7 +1,7 @@
 # Solar_Cybersecurity_Requirements
 This is a collection of cybersecurity requirements for connected solar inverters.
 
-## Scope and applicability
+## Scope, Applicability and Definitions
 
 Block diagram here.
 
