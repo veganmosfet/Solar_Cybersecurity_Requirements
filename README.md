@@ -11,13 +11,13 @@ These requirements apply for solar power plants consisting of:
 ![dsp](pictures/solar2.png)
 
 Notes:
-* *must* or *shall* are used for mandatory positiv requirements.
-* *must not* is used for mandatory negativ requirements.
+* *must* or *shall* are used for mandatory positive requirements.
+* *must not* is used for mandatory negative requirements.
 * *may* is an optional requirement or an example of implementation
 
 ## Gateway & Inverter
 
-Note: the word *device* is used here for gateway and/or inverter.
+Note: the word *device* is used here for gateway and inverter (requirements apply for both).
 
 ### Secure Communication
 
@@ -25,7 +25,7 @@ Note: the word *device* is used here for gateway and/or inverter.
 2. Individual client certificates shall be used on the gateway side.
 3. The gateway private key shall be protected (confidentiality) inside the device. This can be done either with an separate secure element or an internal secure enclave inside the processor system.
 4. The Root CA of the cloud platform used for server authentication shall be protected (integrity) inside the device. 
-5. If a WiFi access point is used for device parametrization, it shall implement WPA3 security with **individual** initial password protection.
+5. If a WiFi access point is used for initial device parametrization, it shall implement WPA3 security with **individual** initial password protection.
 6. It shall be possible to switch off the Access Point. 
 7. If any other wireless communication is used (e.g. Bluetooth), state of the art security shall be implemented.
 8. The device must not implement proprietary wireless communication. 
@@ -77,29 +77,40 @@ In case of firmware compromisation, following pure HW circuits shall be implemen
 4. Session tokens shall be invalidated after a predefined timeout.
 5. Session tokens shall be invalidated as soon as a user logs off.
 
-### API Authorizations
+### API Authorizations (owner's side)
 
 1. **ALL** APIs shall enforce authorization with a valid session token.
-2. It shall be ensured, that users can only access resources they are allowed to. **Note**: this requirement is not testable.
+2. It shall be ensured, that users can only access resources they are allowed to.
+> [!NOTE]
+> This requirement is not testable.
+
+### Cloud Authorizations (device side)
+
+1. It must be ensured that devices can only access resources for which they are allowed to.
+2. Access policies shall be implemented on the cloud side (e.g. MQTT Broker).
 
 ### Remote Control & Remote Maintenance Security
 
-1. Any remote control action of the device shall involve the device individual password (see section Gateway & Inverter > Authentication and Authorization).
-2. Any remote maintenance action shall involve a physical user interaction with the device (e.g. pressing a key).
+1. Any remote control action on the device shall involve the device individual access password (see section Gateway & Inverter > Authentication and Authorization).
+2. Any remote maintenance action shall involve a physical user interaction with the device (e.g. pressing a key). Silent maintenance is forbidden.
    
 ### OTA Firmware Update
 
 1. It must not be possible to upload a Firmware Update Image on the update file server.
-2. A Firmware Update shall only be triggered by device owners. (Not sure here).
+2. A Firmware Update shall only be triggered by device owners or automatically. 
 
 ### Security in case of Compromised Server
 
-1. It shall be ensured, that in case of cloud servers compromization, no scalable attacks on the device fleet is possible. (Not sure how but important). 
+1. It shall be ensured that in case of cloud servers compromization, no scalable attacks on a device fleet is possible.
+> [!IMPORTANT]
+> This is an important requirement. 
 
 ## Secure Pairing Process & Factory Reset
 
 1. The pairing process (device + owner) shall involve high entropy credentials (NOT a simple serial number!).
 2. This pairing process shall only be possible in a local network (NOT remotely).
-3. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
+> [!TIP]
+> To implement secure pairing, X.509 certificated can be used. A user-certificate can be used and securely (in local network) transfered to the device, which only accepts this certificate after the pairing process. End-to-end encryption between device and App can then be implemented using the user-certificate and the device certificate.
+4. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
 
    
