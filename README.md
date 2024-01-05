@@ -6,7 +6,11 @@ This is a collection of cybersecurity requirements for connected grid tie solar 
 These requirements apply for solar power plants consisting of:
 * The solar inverter
 * The gateway. This device - which may be included in the inverter - is the bridge between the cloud (via the home router) and the inverter.
-* The cloud platform accessible via a web client or an app. App security is out of scope. Note that testing the cloud plattform is only partly possible, so that not all requirements can be fully tested.
+* The cloud platform.
+  + It is accessible via specific protocols on the device side (e.g. MQTT).
+  + On the owner's side, it is accessible via a web client or an app. App security is out of scope.
+> [!NOTE]
+>  Testing the cloud plattform is only partly possible, so that not all requirements can be fully tested.
 
 ![dsp](pictures/solar2.png)
 
