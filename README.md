@@ -46,10 +46,10 @@ Notes:
 ### Secure Firmware Update
 
 1. Firmware update images shall implement a cryptographic signature.
-2. This signature shall be based eithier on assymmetric cryptography (global key is allowed) or symmetric cryptography (e.g. CMAC) with device-individual key.
+2. This signature shall be based either on asymmetric cryptography (global key is allowed) or symmetric cryptography (e.g. CMAC) with device-individual key.
 3. A rollback protection mechanism shall be implemented.
 4. The update image signature shall be checked **before** installing any update.
-   
+
 ### Secure Boot
 
 1. CPU and DSP implemented in the devices shall implement secure boot.
@@ -59,10 +59,10 @@ Notes:
    
 ### Secure Debugging
 
-1. Any debugging interfaces (JTAG, UART...) shall be disabled.
+1. Any debugging interface (JTAG, UART...) shall be disabled.
 2. Re-enabling debugging interfaces shall only be implemented with signed tokens. This token shall include a device individual parameter with enough entropy, so that secure debugging tokens can't be used for all devices.
 
-### Safety Pure HW Protection Mechanisms
+### Safety Pure Hardware Protection Mechanisms
 
 In case of firmware compromisation, following pure hardware circuits shall be implemented:
 1. Short circuit protection at the solar **and** grid side
@@ -72,11 +72,11 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 
 ### APIs Secure Communication
 
-1. APIs shall only be accessible via TLS >= 1.2.
+1. APIs shall only be accessible with TLS >= 1.2.
 
 ### Owner Side Authentication & Session Tokens
 
-1. User authentication on the cloud platform shall be based on Multi-Factor-Authentication.
+1. User authentication on the cloud platform may be based on Multi-Factor-Authentication.
 2. Password minimum entropy shall be enforced.
 3. Session tokens shall have enough entropy. Json Web Tokens may be used.
 4. Session tokens shall be invalidated after a predefined time.
@@ -91,12 +91,12 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 1. **ALL** APIs shall enforce authorization with a valid session token.
 2. It shall be ensured, that users can only access resources they are allowed to.
 > [!NOTE]
-> This requirement is not testable.
+> This requirement is not fully testable.
 
 ### Device Side Cloud Authorizations
 
 1. It must be ensured that devices can only access resources which they are allowed to.
-2. Access policies shall be implemented on the cloud side (e.g. inside the MQTT Broker).
+2. Access policies shall be implemented on the cloud side (e.g. within the MQTT Broker).
 
 ### Remote Control & Remote Maintenance Security
 
@@ -116,10 +116,10 @@ In case of firmware compromisation, following pure hardware circuits shall be im
 
 ## Secure Pairing Process & Factory Reset
 
-1. The pairing process (device + owner) shall involve high entropy credentials (NOT a simple serial number!).
-2. This pairing process shall only be possible in a local network (NOT remotely).
+1. The pairing process (device + owner) shall involve high entropy credentials (**NOT** a simple serial number!).
+2. This pairing process shall only be possible in a local network (**NOT** remotely).
 > [!TIP]
-> To implement secure pairing, X.509 certificated can be used. A user-certificate can be created and transfered securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App can then be implemented using the user-certificate and the device-certificate.
+> To implement secure pairing, X.509 certificated may be used. A user-certificate may be created and transfered securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App may then be implemented using the user-certificate and the device-certificate.
 4. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
 
    
