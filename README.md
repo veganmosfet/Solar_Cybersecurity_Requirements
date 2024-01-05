@@ -121,6 +121,6 @@ In case of compromised firmware, following pure hardware circuits shall be imple
 2. This pairing process shall only be possible in a local network (**NOT** remotely).
 > [!TIP]
 > To implement secure pairing, X.509 certificated may be used. A user-certificate may be created and transferred securely (local network) to the device, which will only accept this certificate after the pairing process. End-to-end encryption between device and App may then be implemented using the user-certificate and the device-certificate.
-4. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
+3. Factory reset shall remove / wipe out all user data, including the pairing specific credentials / cryptographic material.
 
    
