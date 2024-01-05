@@ -9,7 +9,7 @@ Block diagram here.
 
 ### Secure Communication
 
-## Authentication and Authorization
+### Authentication and Authorization
 
 ### Secure Firmware Update
 
