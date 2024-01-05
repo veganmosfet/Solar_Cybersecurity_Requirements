@@ -23,7 +23,7 @@ Note: the word *device* is used here for gateway and inverter (requirements appl
 
 1. Communication between gateway and cloud shall be protected by TLS version >= 1.2. with enforced mutual authentication.
 2. Individual client certificates shall be used on the gateway side.
-3. The gateway private key shall be protected (confidentiality) inside the device. This can be done either with an separate secure element or an internal secure enclave inside the processor system.
+3. The gateway private key shall be protected (confidentiality) inside the device. This can be done either with a separate secure element or an internal secure enclave inside the processor system.
 4. The Root CA of the cloud platform used for server authentication shall be protected (integrity) inside the device. 
 5. If a WiFi access point is used for initial device parametrization, it shall implement WPA3 security with **individual** initial password protection.
 6. It shall be possible to switch off the Access Point. 
