@@ -21,7 +21,8 @@ Notes:
 
 ## Gateway & Inverter
 
-Note: the word *device* is used here for gateway and inverter (requirements apply for both).
+> [!NOTE]
+>  The word *device* is used here for gateway and inverter (requirements apply for both). 
 
 ### Secure Communication
 
