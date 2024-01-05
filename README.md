@@ -26,9 +26,11 @@ Definitions:
 2. This server shall provide the same services as from the manufacturer's cloud.
 3. This server shall implement TLS version >= 1.2.
 4. Client authentication shall be done either via passwords with enough entropy or mTLS.
-5. Device individual initial passwords shall be implemented.
-6. Session tokens shall be used with limited lifetime.
-7. Session tokens shall be invalidated as soon as a user logs off.
+5. In case of mTLS, it shall be possible to add client certificates during the pairing process.
+6. The pairing process shall involve physical user interaction with the device (e.g. pressing a key).
+7. Device individual initial passwords shall be implemented.
+8. Session tokens shall be used with limited lifetime.
+9. Session tokens shall be invalidated as soon as a user logs off.
 
 ## Gateway & Inverter
 
