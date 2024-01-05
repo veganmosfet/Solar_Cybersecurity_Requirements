@@ -47,8 +47,9 @@ Notes:
 
 1. Firmware update images shall implement a cryptographic signature.
 2. This signature shall be based either on asymmetric cryptography (global key is allowed) or symmetric cryptography (e.g. CMAC) with device-individual key.
-3. A rollback protection mechanism shall be implemented.
-4. The update image signature shall be checked **before** installing any update.
+3. In case of symmetric cryptography, the device-individual key shall be protected (confidentiality and integrity) inside the device. This key must not leave the device. 
+4. A rollback protection mechanism shall be implemented.
+5. The update image signature shall be checked **before** installing any update.
 
 ### Secure Boot
 
