@@ -15,10 +15,10 @@ These requirements apply for solar power plants consisting of:
 
 ![block](pictures/solar2.png)
 
-> [!NOTE]
->  *must* or *shall* are used for mandatory positive requirements.
->  *must not* is used for mandatory negative requirements.
->  *may* is an optional requirement or an example of implementation.
+Definitions:
+*  *must* or *shall* are used for mandatory positive requirements.
+*  *must not* is used for mandatory negative requirements.
+*  *may* is an optional requirement or an example of implementation.
 
 ## Gateway & Inverter
 
