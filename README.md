@@ -74,13 +74,17 @@ In case of firmware compromisation, following pure HW circuits shall be implemen
 
 1. APIs shall only be accessible via TLS >= 1.2.
 
-### Authentication & Session Tokens
+### Authentication & Session Tokens (owner's side)
 
 1. User authentication on the cloud platform shall be based on Multi-Factor-Authentication.
 2. Password minimum entropy shall be enforced.
 3. Session tokens shall have enough entropy. Json Web Tokens may be used.
 4. Session tokens shall be invalidated after a predefined timeout.
 5. Session tokens shall be invalidated as soon as a user logs off.
+
+### Authentication (device's side)
+
+1. Device authentiation shall be based on mTLS (see section Gateway & Inverter > Secure Communication).
 
 ### API Authorizations (owner's side)
 
