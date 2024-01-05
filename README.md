@@ -108,12 +108,12 @@ In case of compromised firmware, following pure hardware circuits shall be imple
    
 ### OTA Firmware Update
 
-1. It must not be possible to upload a Firmware Update Image on the update file server.
+1. It must not be possible to upload a firmware update image on the update file server.
 2. A Firmware Update shall only be triggered by device owners or automatically. 
 
 ### Security in case of Compromised Servers
 > [!IMPORTANT]
-1. It shall be ensured that in case of compromised cloud servers, no scalable attacks on a device fleet is possible.
+> It shall be ensured that in case of compromised cloud servers, no scalable attacks on a device fleet is possible.
 
 ## Secure Pairing Process & Factory Reset
 
