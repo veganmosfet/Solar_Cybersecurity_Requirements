@@ -1,5 +1,5 @@
 # Solar_Cybersecurity_Requirements
-This is a collection of cybersecurity requirements for connected grid tie solar inverters.
+A collection of cybersecurity requirements for connected grid tie solar inverters.
 
 ## Scope, Applicability and Definitions
 
