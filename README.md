@@ -31,7 +31,7 @@ Definitions:
 5. In case of mTLS, it shall be possible to add client certificates during the pairing process.
 6. The pairing process shall involve physical user interaction with the device (e.g. pressing a key).
 7. Device individual initial passwords shall be implemented.
-8. Session tokens shall be used with limited lifetime.
+8. Session tokens shall have a limited lifetime.
 9. Session tokens shall be invalidated as soon as a user logs off.
 10. The APIs of the gateway server shall be well documented.
 
@@ -58,6 +58,7 @@ Definitions:
 3. The user shall be prompted to change the initial password.
 4. Password minimum entropy shall be enforced.
 5. Password reset shall only be triggered with physical device interaction (e.g. pressing a key on the device). 
+6. Countermeasures against password brute forcing shall be implemented.
 
 ### Secure Firmware Update
 
@@ -97,7 +98,7 @@ In case of compromised firmware, following pure hardware circuits shall be imple
 1. User authentication on the cloud platform may be based on Multi-Factor-Authentication.
 2. Password minimum entropy shall be enforced.
 3. Session tokens shall have enough entropy. Json Web Tokens may be used.
-4. Session tokens shall be invalidated after a predefined time.
+4. Session tokens shall have a limited lifetime.
 5. Session tokens shall be invalidated as soon as a user logs off.
 
 ### Device Side Authentication
