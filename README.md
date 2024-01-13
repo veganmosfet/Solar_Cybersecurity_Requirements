@@ -24,16 +24,15 @@ Definitions:
 
 ## Integration of open source solutions
 
-1. In order to be able to integrate an open source software solution, the gateway shall implement a server accessible from the local network. 
-2. This server shall provide the same services as from the manufacturer's cloud.
-3. This server shall implement TLS version >= 1.2.
-4. Client authentication shall be done either via passwords with enough entropy or mTLS.
-5. In case of mTLS, it shall be possible to add client certificates during the pairing process.
+1. In order to be able to integrate an open source software solution, the gateway shall implement a local interface. 
+2. This local interface shall provide the same services as from the manufacturer's cloud.
+4. Client authentication shall be done either via passwords with enough entropy or X.509 certificates.
+5. In case of certificates, it shall be possible to add client certificates during the pairing process.
 6. The pairing process shall involve physical user interaction with the device (e.g. pressing a key).
 7. Device individual initial passwords shall be implemented.
 8. Session tokens shall have a limited lifetime.
 9. Session tokens shall be invalidated as soon as a user logs off.
-10. The APIs of the gateway server shall be well documented.
+10. The APIs of the gateway local interface shall be completely documented.
 
 ## Gateway & Inverter
 
