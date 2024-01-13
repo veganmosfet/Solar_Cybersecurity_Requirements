@@ -15,7 +15,7 @@ These requirements apply for solar power plants consisting of:
 > [!NOTE]
 >  Testing the cloud platform is only partly possible, so that not all requirements can be fully tested.
 
-![block](pictures/solar.png)
+![block](pictures/solar3.png)
 
 Definitions:
 *  *must* or *shall* are used for mandatory positive requirements.
