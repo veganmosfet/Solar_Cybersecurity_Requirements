@@ -54,7 +54,7 @@ Definitions:
 7. If any other wireless communication is used (e.g. Bluetooth), state of the art security shall be implemented (to be refined).
 8. The device must not implement proprietary wireless communication. 
 
-### Authentication
+### Authentication & Authorization
 
 1. Accessing or changing **any** device data or parameters shall be protected by a user-password (this applies both for local and remote access).
 2. Initial Passwords shall be individual.
@@ -62,6 +62,8 @@ Definitions:
 4. Password minimum entropy shall be enforced.
 5. Password reset shall only be triggered with physical device interaction (e.g. pressing a key on the device). 
 6. Countermeasures against password brute forcing shall be implemented.
+7. Access (read or write) to any device resource shall involve authorization.
+8. Role based access control may be implemented.
 
 ### Secure Firmware Update
 
