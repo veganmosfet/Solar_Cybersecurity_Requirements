@@ -2,6 +2,10 @@
 
 A collection of cybersecurity requirements for connected grid tie solar inverters.
 
+> [!NOTE]
+> A grid tie inverter is a "Distributed Energy Resource" (DER). In IEC 62351-12, security requirements for such devices are listed. 
+
+
 ## Scope, Applicability and Definitions
 
 These requirements apply for solar power plants consisting of:
@@ -85,6 +89,7 @@ Definitions:
 In case of compromised firmware, following pure hardware circuits shall be implemented:
 1. Short circuit protection at the solar **and** grid side
 2. Over-heating protection
+3. Anti-islanding protection
 
 ## Cloud & APIs
 
