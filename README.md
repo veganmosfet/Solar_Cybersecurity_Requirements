@@ -49,12 +49,12 @@ Definitions:
 2. Individual client certificates shall be used on the gateway side.
 3. The gateway private key shall be protected (**confidentiality**) inside the device. This can be done either with a separate secure element or an internal secure enclave inside the processor system.
 4. The Root CA of the cloud platform used for server authentication shall be protected (**integrity**) inside the device. 
-5. If a WiFi access point is used for device initialization, it shall implement WPA3 security with **individual** initial password protection.
+5. If a WiFi Access Point (AP) is used for device initialization, it shall implement WPA3 security with **individual** initial password protection.
 6. It shall be possible to switch off the Access Point. 
 7. If any other wireless communication is used (e.g. Bluetooth), state of the art security shall be implemented (to be refined).
 8. The device must not implement proprietary wireless communication. 
 
-### Authentication and Authorization
+### Authentication
 
 1. Accessing or changing **any** device data or parameters shall be protected by a user-password (this applies both for local and remote access).
 2. Initial Passwords shall be individual.
